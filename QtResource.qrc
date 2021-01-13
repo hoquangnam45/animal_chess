@@ -1,0 +1,28 @@
+<RCC>
+    <qresource prefix="/asset_visual/chess_face">
+        <file alias="iconCatBlue">asset/piece_face_image/cat_blue.png</file>
+        <file alias="iconCatRed">asset/piece_face_image/cat_red.png</file>
+        <file alias="iconDogBlue">asset/piece_face_image/dog_blue.png</file>
+        <file alias="iconDogRed">asset/piece_face_image/dog_red.png</file>
+        <file alias="iconElephantBlue">asset/piece_face_image/elephant_blue.png</file>
+        <file alias="iconElephantRed">asset/piece_face_image/elephant_red.png</file>
+        <file alias="iconLeopardBlue">asset/piece_face_image/leopard_blue.png</file>
+        <file alias="iconLeopardRed">asset/piece_face_image/leopard_red.png</file>
+        <file alias="iconLionBlue">asset/piece_face_image/lion_blue.png</file>
+        <file alias="iconLionRed">asset/piece_face_image/lion_red.png</file>
+        <file alias="iconRatBlue">asset/piece_face_image/rat_blue.png</file>
+        <file alias="iconRatRed">asset/piece_face_image/rat_red.png</file>
+        <file alias="iconTigerBlue">asset/piece_face_image/tiger_blue.png</file>
+        <file alias="iconTigerRed">asset/piece_face_image/tiger_red.png</file>
+        <file alias="iconWolfBlue">asset/piece_face_image/wolf_blue.png</file>
+        <file alias="iconWolfRed">asset/piece_face_image/wolf_red.png</file>
+    </qresource>
+    <qresource prefix="/asset_visual/terrain_background">
+        <file alias="terrainGoalBlue">asset/terrain_background/goal_blue.png</file>
+        <file alias="terrainGoalRed">asset/terrain_background/goal_red.png</file>
+        <file alias="terrainGrass">asset/terrain_background/grass.png</file>
+        <file alias="terrainRiver">asset/terrain_background/river.png</file>
+        <file alias="terrainTrapBlue">asset/terrain_background/trap_blue.png</file>
+        <file alias="terrainTrapRed">asset/terrain_background/trap_red.png</file>
+    </qresource>
+</RCC>
