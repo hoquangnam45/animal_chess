@@ -4,21 +4,21 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="src/mainwindow.ui" line="14"/>
+        <location filename="mainwindow.ui" line="14"/>
         <location filename="build/animal_chess_autogen/include_Debug/ui_mainwindow.h" line="50"/>
         <source>MainWindow</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>WidgetMenuBar</name>
+    <name>widgetMenuBar</name>
     <message>
-        <location filename="src/libs/widgets/widgetMenuBar/widgetMenuBar.cpp" line="3"/>
+        <location filename="customLib/customWidget/widgetMenuBar.cpp" line="3"/>
         <source>Game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/libs/widgets/widgetMenuBar/widgetMenuBar.cpp" line="4"/>
+        <location filename="customLib/customWidget/widgetMenuBar.cpp" line="4"/>
         <source>View</source>
         <translation type="unfinished"></translation>
     </message>

@@ -4,6 +4,13 @@ project(animal_chess LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
+# External dependecies with C++
+include(deps/CMakeLists.txt)
+
+# Set directory for header file
+include_directories(src/libs)
+include_directories(.)
+
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -29,36 +36,40 @@ find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets LinguistTools REQUIRED)
 
 set(TS_FILES animal_chess_vi_VN.ts)
 
-file(GLOB customWidget_SRC
-    "customLib/customWidget/*.cpp"
+file(GLOB_RECURSE customWidget_SRC
+    "src/libs/widgets/*.cpp"
 )
 
-file(GLOB chessElement_SRC 
-    "customLib/chessElement/*.cpp"
+file(GLOB_RECURSE chessElement_SRC 
+    "src/libs/chessElement/*.cpp"
+)
+
+file(GLOB_RECURSE ultilities_SRC 
+  "src/libs/ultilities/*.cpp"
 )
 
 if(ANDROID)
   add_library(animal_chess SHARED
-    main.cpp
-    mainwindow.cpp
-    mainwindow.h
-    mainwindow.ui
+    src/main.cpp
+    src/mainwindow.cpp
+    src/mainwindow.ui
     ${customWidget_SRC}
     ${chessElement_SRC}
+    ${ultilities_SRC}
     ${TS_FILES}
   )
 else()
   add_executable(animal_chess
-    main.cpp
-    mainwindow.cpp
-    mainwindow.h
-    mainwindow.ui
+    src/main.cpp
+    src/mainwindow.cpp
+    src/mainwindow.ui
     ${customWidget_SRC}
     ${chessElement_SRC}
+    ${ultilities_SRC}
     ${TS_FILES}
   )
 endif()
 
-target_link_libraries(animal_chess PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(animal_chess PRIVATE Qt${QT_VERSION_MAJOR}::Widgets ryml)
 
 qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
