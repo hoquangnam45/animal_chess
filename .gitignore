@@ -105,3 +105,5 @@ Thumbs.db
 
 build
 .vscode
+deps/*
+!deps/CMakeLists.txt
