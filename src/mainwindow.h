@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <ultilities/configurationParser/configurationParser.h>
 #include <widgets/widgetChessBoard/widgetChessBoard.h>
 #include <widgets/widgetElapsedClock/widgetElapsedClock.h>
 #include <widgets/widgetMenuBar/widgetMenuBar.h>
@@ -20,7 +21,7 @@ class MainWindow : public QMainWindow {
  public:
   static MainWindow *animalChessApp(QWidget *parent = nullptr);
   ~MainWindow();
-
+  WidgetChessBoard *chessBoardWidget;
   // public slots
   // void updateTimer(elapsedTime);
  private:

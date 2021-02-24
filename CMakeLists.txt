@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.16)
 
 project(animal_chess LANGUAGES CXX)
 
@@ -7,6 +7,11 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 # External dependecies with C++
 include(deps/CMakeLists.txt)
 
+# Set c++ build level 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
 # Set directory for header file
 include_directories(src/libs)
 include_directories(.)
@@ -14,9 +19,6 @@ include_directories(.)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
-
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # QtCreator supports the following variables for Android, which are identical to qmake Android variables.
 # Check http://doc.qt.io/qt-5/deployment-android.html for more information.
@@ -48,6 +50,8 @@ file(GLOB_RECURSE ultilities_SRC
   "src/libs/ultilities/*.cpp"
 )
 
+set (RCC_SRC "resources/resourceMap.qrc")
+
 if(ANDROID)
   add_library(animal_chess SHARED
     src/main.cpp
@@ -57,6 +61,7 @@ if(ANDROID)
     ${chessElement_SRC}
     ${ultilities_SRC}
     ${TS_FILES}
+    ${RCC_SRC}
   )
 else()
   add_executable(animal_chess
@@ -67,6 +72,7 @@ else()
     ${chessElement_SRC}
     ${ultilities_SRC}
     ${TS_FILES}
+    ${RCC_SRC}
   )
 endif()
 

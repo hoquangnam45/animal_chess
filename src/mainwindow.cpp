@@ -17,7 +17,7 @@ MainWindow::MainWindow(QWidget* parent)
   mainWindowLayout->setAlignment(Qt::AlignTop);
   mainWindowLayout->addWidget(elapsedClock);
 
-  WidgetChessBoard* chessBoard = WidgetChessBoard::initBoard();
+  chessBoardWidget* chessBoard = WidgetChessBoard::initBoard();
 
   this->setCentralWidget(mainWindowWidget);
 }

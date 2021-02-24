@@ -22,5 +22,15 @@
         <source>View</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="src/libs/widgets/widgetMenuBar/widgetMenuBar.cpp" line="16"/>
+        <source>Configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/libs/widgets/widgetMenuBar/widgetMenuBar.cpp" line="17"/>
+        <source>Load game configration</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
