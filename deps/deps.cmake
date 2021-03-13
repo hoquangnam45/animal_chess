@@ -42,10 +42,11 @@ else()
   set(boost_SOURCE_DIR ${boost_linux_SOURCE_DIR})
 endif()
 
+# https://stackoverflow.com/questions/27086145/what-is-the-default-build-configuration-of-cmake
 FetchContent_GetProperties(google_fruit)
 if(NOT google_fruit_POPULATED) 
   FetchContent_Populate(google_fruit)
-  set(CMAKE_BUILD_TYPE Debug) # By default cmake will use this configuration
+  set(CMAKE_BUILD_TYPE Debug)
   set(Boost_INCLUDE_DIR ${boost_SOURCE_DIR})
   add_subdirectory(${google_fruit_SOURCE_DIR} ${google_fruit_BINARY_DIR})
   target_compile_definitions(fruit PUBLIC CMAKE_BUILD_TYPE=)
