@@ -5,7 +5,6 @@
     <name>MainWindow</name>
     <message>
         <location filename="src/mainwindow.ui" line="14"/>
-        <location filename="build/animal_chess_autogen/include_Debug/ui_mainwindow.h" line="50"/>
         <source>MainWindow</source>
         <translation type="unfinished"></translation>
     </message>

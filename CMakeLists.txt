@@ -5,9 +5,9 @@ project(animal_chess LANGUAGES CXX)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 # External dependecies with C++
-include(deps/CMakeLists.txt)
+include(deps/deps.cmake)
 
-# Set c++ build level 
+# Set c++ build level - For new feature of C++
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 set(CMAKE_CXX_EXTENSIONS OFF)
@@ -15,10 +15,6 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 # Set directory for header file
 include_directories(src/libs)
 include_directories(.)
-
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
 
 # QtCreator supports the following variables for Android, which are identical to qmake Android variables.
 # Check http://doc.qt.io/qt-5/deployment-android.html for more information.
@@ -36,8 +32,6 @@ set(CMAKE_AUTORCC ON)
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets LinguistTools REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets LinguistTools REQUIRED)
 
-set(TS_FILES animal_chess_vi_VN.ts)
-
 file(GLOB_RECURSE customWidget_SRC
     "src/libs/widgets/*.cpp"
 )
@@ -50,32 +44,39 @@ file(GLOB_RECURSE ultilities_SRC
   "src/libs/ultilities/*.cpp"
 )
 
-set (RCC_SRC "resources/resourceMap.qrc")
+# USING THIS TO DISALLOW IT SCAN ALL FOLDER
+set(CMAKE_AUTOUIC ON) # Compile ui file
+set(CMAKE_AUTORCC ON) # Compile resource file
+set(CMAKE_AUTOMOC ON) # Compile QObject macro
+set(RESOURCE_FILES "resources/resourceMap.qrc")
+set(LINGUIST_FILES  "animal_chess_vi_VN.ts")
+qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR}/src ${LINGUIST_FILES}) 
 
 if(ANDROID)
   add_library(animal_chess SHARED
     src/main.cpp
     src/mainwindow.cpp
     src/mainwindow.ui
+    src/mainwindow.h
     ${customWidget_SRC}
     ${chessElement_SRC}
     ${ultilities_SRC}
-    ${TS_FILES}
-    ${RCC_SRC}
+    ${LINGUIST_FILES}
+    ${RESOURCE_FILES}
   )
 else()
   add_executable(animal_chess
     src/main.cpp
     src/mainwindow.cpp
     src/mainwindow.ui
+    src/mainwindow.h
     ${customWidget_SRC}
     ${chessElement_SRC}
     ${ultilities_SRC}
-    ${TS_FILES}
-    ${RCC_SRC}
+    ${LINGUIST_FILES}
+    ${RESOURCE_FILES}
   )
 endif()
 
-target_link_libraries(animal_chess PRIVATE Qt${QT_VERSION_MAJOR}::Widgets ryml)
+target_link_libraries(animal_chess PRIVATE Qt${QT_VERSION_MAJOR}::Widgets ryml fruit)
 
-qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})

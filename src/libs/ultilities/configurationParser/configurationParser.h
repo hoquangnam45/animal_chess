@@ -5,22 +5,21 @@
 #include <QDebug>
 #include <QDir>
 #include <QFile>
-#include <c4/format.hpp>
-#include <ryml.hpp>
-#include <ryml_std.hpp>
+#include <QStringLiteral>
 
 class ConfigurationParser {
  public:
   ConfigurationParser();
   ~ConfigurationParser();
-  ChessBoard* constructChessBoard(QDir* filePath = nullptr);
-  ChessBoard* constructDefaultChessBoard();
-  QDir configurationPath = defaultConfigurationPath;
+  ChessBoard constructChessBoard(QDir filePath);
+  ChessBoard constructDefaultChessBoard();
+  QDir configurationPath =
+      QDir(ConfigurationParser::DEFAULT_CONFIGURATION_PATH);
 
  private:
-  const std::string CHESS_DIMENSION = "chess_dimension";
-  const QDir defaultConfigurationPath = ":/config/defaultChessConfig";
+  static const QString CHESS_DIMENSION;
+  static const QString DEFAULT_CONFIGURATION_PATH;
 };
 
-static ConfigurationParser configParser;
+extern ConfigurationParser configParser;
 #endif  // __CONFIGURATION_PARSER_H

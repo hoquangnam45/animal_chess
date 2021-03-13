@@ -20,8 +20,11 @@ QMenu* WidgetMenuBar::buildConfigurationMenu() {
 }
 void WidgetMenuBar::openFileDialog() {
   QString fileName = QFileDialog::getOpenFileName();
-  if (!fileName) chessBoard = configParser.contructDefaultChessBoard();
-  chessBoard = configParser.constructChessBoard(fileName);
+  if (fileName.isEmpty())
+    chessBoard = configParser.constructDefaultChessBoard();
+  QDir configFilePath;
+  configFilePath.setPath(fileName);
+  chessBoard = configParser.constructChessBoard(configFilePath);
 }
 WidgetMenuBar* WidgetMenuBar::setupMenuBar(QWidget* parent) {
   return new WidgetMenuBar(parent);

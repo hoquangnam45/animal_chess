@@ -8,8 +8,9 @@
 #include <QFileDialog>
 #include <QMenuBar>
 #include <QString>
+
 extern ConfigurationParser configParser;
-extern ChessBoard chessBoard;
+
 class WidgetMenuBar : public QMenuBar {
   Q_OBJECT
  public:
