@@ -9,21 +9,18 @@
 #include <QMenuBar>
 #include <QString>
 
-extern ConfigurationParser configParser;
-
 class WidgetMenuBar : public QMenuBar {
   Q_OBJECT
  public:
-  static WidgetMenuBar *setupMenuBar(QWidget *parent = nullptr);
+  WidgetMenuBar(QWidget *parent = nullptr);
   ~WidgetMenuBar();
 
  private:
-  WidgetMenuBar(QWidget *parent);
-  QMenu *buildConfigurationMenu();
-
-  QMenu *menuGame = nullptr;
-  QMenu *menuView = nullptr;
-  QMenu *menuConfiguration = nullptr;
+  QMenu menuGame;
+  QMenu menuView;
+  QMenu menuConfiguration;
+  QDir configFilePath;
+  void buildConfigurationMenu();
 
  private slots:
   void openFileDialog();

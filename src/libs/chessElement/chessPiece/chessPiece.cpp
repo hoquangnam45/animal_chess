@@ -1,6 +1,7 @@
 #include "chessPiece.h"
 
-ChessPiece::ChessPiece(CHESS_PIECE chessPiece, CHESS_TEAM chessTeam) {
+ChessPiece::ChessPiece(const CHESS_PIECE& chessPiece,
+                       const CHESS_TEAM& chessTeam) {
   this->chessPiece = chessPiece;
   this->chessTeam = chessTeam;
 }

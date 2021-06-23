@@ -1,10 +1,15 @@
 #include "chessCell.h"
 
-ChessCell::ChessCell(CHESS_TERRAIN chessTerrain) {
-  this->standingPiece = nullptr;
+ChessCell::ChessCell(const CHESS_TERRAIN& chessTerrain,
+                     ChessPiece* chessPiece) {
   this->chessTerrain = chessTerrain;
+  this->standingPiece = chessPiece;
 }
 
-ChessCell::ChessCell(ChessPiece* chessPiece) {
-  this->standingPiece = chessPiece;
+ChessCell::~ChessCell() {
+  if (this->standingPiece) {
+    delete this->standingPiece;
+    this->standingPiece = nullptr;
+  }
+  return;
 }

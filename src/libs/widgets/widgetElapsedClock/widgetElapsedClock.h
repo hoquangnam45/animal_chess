@@ -1,10 +1,12 @@
 #ifndef WIDGETELAPSEDCLOCK_H
 #define WIDGETELAPSEDCLOCK_H
 
+#include <QButtonGroup>
 #include <QDebug>
 #include <QElapsedTimer>
 #include <QHBoxLayout>
 #include <QLabel>
+#include <QPushButton>
 #include <QSizePolicy>
 #include <QString>
 #include <QTime>
@@ -18,23 +20,21 @@ class WidgetElapsedClock : public QWidget {
   static const int TIMER_TIMEOUT = 1000;
   static const int CLOCK_WIDGET_HEIGHT = 40;
   static const QString CLOCK_FORMAT;
-  WidgetElapsedClock(QWidget* parent);
   bool clockStart = false;
-  QString getElapsedTime();
-  QTimer* timer = new QTimer();
-  QString* timer_text = new QString();
-  QLabel* timer_label = new QLabel();
-  QTime* elapsedTime = new QTime(0, 0, 0);
+  QTimer timer;
+  QString timer_text;
+  QLabel timer_label;
+  QTime elapsedTime = QTime(0, 0, 0);
+  QPushButton startButton = QPushButton(tr("Start"));
+  void handleStartButton();
  private slots:
-  void updateClock();
+  void updateClockLabel();
+  void startClock();
 
  public:
+  WidgetElapsedClock(QWidget* parent = nullptr);
   ~WidgetElapsedClock();
-  static WidgetElapsedClock* createElapsedClock(QWidget* parent = nullptr);
-  void start();
-
- signals:
-  void test();
+  QString getElapsedTime();
 };
 
 #endif  // WIDGETELAPSEDCLOCK_H
