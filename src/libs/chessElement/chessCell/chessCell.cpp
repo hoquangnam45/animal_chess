@@ -1,9 +1,11 @@
 #include "chessCell.h"
 
-ChessCell::ChessCell(const CHESS_TERRAIN& chessTerrain,
-                     ChessPiece* chessPiece) {
-  this->chessTerrain = chessTerrain;
-  this->standingPiece = chessPiece;
+ChessCell::ChessCell(const ChessPosition& chessPosition) {
+  this->chessPosition = chessPosition;
+}
+
+ChessCell::ChessCell() {
+  return;
 }
 
 ChessCell::~ChessCell() {

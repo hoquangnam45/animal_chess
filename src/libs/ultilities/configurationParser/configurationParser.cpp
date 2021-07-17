@@ -13,14 +13,28 @@ ChessBoard ConfigurationParser::constructChessBoard(QDir& filePath) {
   configFile.open(QIODevice::ReadOnly);
   QTextStream in(&configFile);
   QString content = in.readAll();
-  YAML::Node config = YAML::Load(content.toStdString());
-  qDebug() << config["chess_configuration"].size();
-  assert(config["chess_configuration"].size() == ChessBoard::BOARD_HEIGHT);
+  YAML::Node config = YAML::Load(content.toStdString())["chess_configuration"];
+  assert(config.size() == ChessBoard::BOARD_HEIGHT);
   ChessBoard ret;
-  for (auto const& row : config["chess_configuration"]) {
+  for (auto const& row : config) {
     assert(row.size() == ChessBoard::BOARD_WIDTH);
   }
-  return ChessBoard();
+  std::vector<ChessCell> chessCellVec;
+  for (int i = 0; i < config.size(); i++) {
+    auto const& row = config[i];
+    for (int j = 0; j < row.size(); j++) {
+      auto const& col = row[j];
+      ChessPiece* chessPiece = nullptr;
+      if (col.size() == 2) {
+        std::string team = col.operator[]("team").as<std::string>();
+        std::string type = col.operator[]("type").as<std::string>();
+        chessPiece = new ChessPiece(CHESS_TYPE_DICTIONARY.at(type), CHESS_TEAM_DICTIONARY.at(team));
+      }
+      ChessCell chessCell(ChessPosition(i, j));
+      ret.addCell(chessCell, chessPiece);
+    }
+  }
+  return ret;
 }
 
 ChessBoard ConfigurationParser::constructChessBoard() {

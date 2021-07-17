@@ -1,7 +1,8 @@
 #ifndef __CONFIGURATION_PARSER_H
 #define __CONFIGURATION_PARSER_H
 #include <chessElement/chessBoard/chessBoard.h>
-#include <enums/chessPieceEnum/chessPieceEnum.h>
+#include <chessElement/chessCell/chessCell.h>
+#include <enums/chessTypeEnum/chessTypeEnum.h>
 #include <yaml-cpp/yaml.h>
 
 #include <QDebug>
@@ -11,6 +12,7 @@
 #include <QTextStream>
 #include <iostream>
 #include <string>
+#include <vector>
 
 class ConfigurationParser {
  public:

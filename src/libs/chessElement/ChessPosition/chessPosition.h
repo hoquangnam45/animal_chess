@@ -3,9 +3,9 @@
 class ChessPosition {
  public:
   int row;
-  int column;
-  ChessPosition() : ChessPosition(-1, - 1){};
-  ChessPosition(int row, int column);
+  int col;
+  ChessPosition();
+  ChessPosition(int row, int col);
   ~ChessPosition();
 };
 #endif

@@ -1,7 +1,0 @@
-#include "chessPieceEnum.h"
-
-const std::map<std::string, CHESS_PIECE> CHESS_PIECE_DICTIONARY = {
-    {"MOUSE", CHESS_PIECE::MOUSE},     {"CAT", CHESS_PIECE::CAT},
-    {"DOG", CHESS_PIECE::DOG},         {"WOLF", CHESS_PIECE::WOLF},
-    {"LEOPARD", CHESS_PIECE::LEOPARD}, {"TIGER", CHESS_PIECE::TIGER},
-    {"LION", CHESS_PIECE::LION},       {"ELEPHANT", CHESS_PIECE::ELEPHANT}};
