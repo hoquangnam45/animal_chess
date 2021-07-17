@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <ultilities/configurationParser/configurationParser.h>
 #include <widgets/widgetChessBoard/widgetChessBoard.h>
 #include <widgets/widgetElapsedClock/widgetElapsedClock.h>
 #include <widgets/widgetMenuBar/widgetMenuBar.h>
@@ -18,15 +19,14 @@ QT_END_NAMESPACE
 class MainWindow : public QMainWindow {
   Q_OBJECT
  public:
-  static MainWindow *animalChessApp(QWidget *parent = nullptr);
+  MainWindow(QWidget *parent = nullptr);
   ~MainWindow();
 
-  // public slots
-  // void updateTimer(elapsedTime);
  private:
   Ui::MainWindow *ui;
-  MainWindow(QWidget *parent);
-  WidgetMenuBar *gameMenuBar;
-  //        WidgetElapsedClock *elapsedClock;
+  WidgetMenuBar gameMenuBar;
+  WidgetElapsedClock elapsedClock;
+  WidgetChessBoard chessBoard;
+  QVBoxLayout mainWindowLayout;
 };
 #endif  // MAINWINDOW_H

@@ -1,16 +1,26 @@
 #include "widgetMenuBar.h"
-WidgetMenuBar::WidgetMenuBar(QWidget* parent) : QMenuBar(parent) {
-  menuGame = new QMenu(tr("Game"));
-  menuView = new QMenu(tr("View"));
-  this->addMenu(menuGame);
-  this->addMenu(menuView);
+WidgetMenuBar::WidgetMenuBar(QWidget* parent)
+    : QMenuBar(parent) {
+  menuGame.setTitle(tr("Game"));
+  menuView.setTitle(tr("View"));
+  buildConfigurationMenu();
+  addMenu(&menuGame);
+  addMenu(&menuView);
+  addMenu(&menuConfiguration);
 }
 
-WidgetMenuBar* WidgetMenuBar::setupMenuBar(QWidget* parent) {
-  return new WidgetMenuBar(parent);
+void WidgetMenuBar::buildConfigurationMenu() {
+  menuConfiguration.setTitle(tr("Configuration"));
+  menuConfiguration.addAction(tr("Load game configration"), this,
+                                &WidgetMenuBar::openFileDialog);
 }
 
-WidgetMenuBar::~WidgetMenuBar() {
-  delete menuGame;
-  delete menuView;
+void WidgetMenuBar::openFileDialog() {
+  QString fileName = QFileDialog::getOpenFileName();
+  if (fileName.isEmpty()) {
+    return;
+  }
+  configFilePath = QDir(fileName);
 }
+
+WidgetMenuBar::~WidgetMenuBar() {}

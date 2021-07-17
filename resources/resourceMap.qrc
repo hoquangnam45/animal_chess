@@ -25,4 +25,7 @@
         <file alias="terrainTrapBlue">asset/terrain_background/trap_blue.png</file>
         <file alias="terrainTrapRed">asset/terrain_background/trap_red.png</file>
     </qresource>
+    <qresource prefix="/config">
+        <file alias="defaultChessConfig">configuration/chess_board.yaml</file>
+    </qresource>
 </RCC>

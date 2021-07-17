@@ -1,0 +1,9 @@
+#include "chessTypeEnum.h"
+
+const std::map<std::string, CHESS_TYPE> CHESS_TYPE_DICTIONARY = {
+    {"MOUSE", CHESS_TYPE::MOUSE},     {"CAT", CHESS_TYPE::CAT},
+    {"DOG", CHESS_TYPE::DOG},         {"WOLF", CHESS_TYPE::WOLF},
+    {"LEOPARD", CHESS_TYPE::LEOPARD}, {"TIGER", CHESS_TYPE::TIGER},
+    {"LION", CHESS_TYPE::LION},       {"ELEPHANT", CHESS_TYPE::ELEPHANT},
+    {"UNDEFINED", CHESS_TYPE::UNDEFINED}
+};

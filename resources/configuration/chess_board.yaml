@@ -1,0 +1,10 @@
+chess_configuration:
+- [{ type: "LION", team: "RED" }, null, null, null, null, null, { type: "TIGER", team: "RED" }]
+- [null, { type: "DOG", team: "RED" }, null, null, null, { type: "CAT", team: "RED" }, null]
+- [{ type: "MOUSE", team: "RED" }, null, { type: "LEOPARD", team: "RED" }, null, { type: "WOLF", team: "RED" }, null, { type: "ELEPHANT", team: "RED" }]
+- [null, null, null, null, null, null, null]
+- [null, null, null, null, null, null, null]
+- [null, null, null, null, null, null, null]
+- [{ type: "ELEPHANT", team: "BLUE" }, null, { type: "WOLF", team: "BLUE" }, null, { type: "LEOPARD", team: "BLUE" }, null, { type: "MOUSE", team: "BLUE" }]
+- [null, { type: "CAT", team: "BLUE" }, null, null, null, { type: "DOG", team: "BLUE" }, null]
+- [{ type: "TIGER", team: "BLUE" }, null, null, null, null, null, { type: "LION", team: "BLUE" }]
