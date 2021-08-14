@@ -1,10 +1,20 @@
 #include "widgetChessBoard.h"
+WidgetChessBoard::WidgetChessBoard(QWidget* parent) : StyleWidget<QWidget>(parent), layout(this), controller(ConfigurationParser::constructChessBoard()) {
+    ui.setupUi(this);
+    setLayout(&layout);
+    for (const auto &row: controller.boardArray) {
+        for (const auto &cell: row) {
+            layout.addWidget(new WidgetChessCell(cell, this));
+        }
+    }
+}
 
-WidgetChessBoard::WidgetChessBoard(QWidget* parent) : QWidget(parent) {
-  this->chessBoardController = ConfigurationParser::constructChessBoard(
-      QDir(":/config/defaultChessConfig"));
-};
+WidgetChessBoard::~WidgetChessBoard() = default;
 
-void WidgetChessBoard::viewChessBoard() { return; }
+QDir WidgetChessBoard::cssDir() const {
+    return {":/styles/widgetChessBoard"};
+}
 
-WidgetChessBoard::~WidgetChessBoard() {}
+QString WidgetChessBoard::objectName() const {
+    return "widgetChessBoard";
+}

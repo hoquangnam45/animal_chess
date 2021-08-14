@@ -1,5 +1,4 @@
-#ifndef __CHESS_PIECE_H
-#define __CHESS_PIECE_H
+#pragma once
 #include <enums/chessTypeEnum/chessTypeEnum.h>
 #include <enums/chessTeamEnum/chessTeamEnum.h>
 #include <chessElement/ChessPosition/chessPosition.h>
@@ -10,4 +9,3 @@ class ChessPiece {
   CHESS_TEAM chessTeam = CHESS_TEAM::UNDEFINED;
   ChessPiece(const CHESS_TYPE& chessType, const CHESS_TEAM& chessTeam);
 };
-#endif

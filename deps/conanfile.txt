@@ -1,0 +1,6 @@
+[requires]
+yaml-cpp/0.7.0
+magic_enum/0.7.3
+
+[generators]
+cmake

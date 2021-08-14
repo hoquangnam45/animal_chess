@@ -1,17 +1,11 @@
-#ifndef __CHESS_BOARD_H
-#define __CHESS_BOARD_H
+#pragma once
 #include <chessElement/chessCell/chessCell.h>
 #include <array>
 #include <memory>
+#include <layout/chessBoardLayout.h>
 
 class ChessBoard {
   public:
-    static const int BOARD_WIDTH = 7;
-    static const int BOARD_HEIGHT = 9;
-    static const std::array<std::array<CHESS_TERRAIN, BOARD_WIDTH>, BOARD_HEIGHT> CHESS_TERRAIN_MAP;
-    ChessBoard();
-    void addCell(const ChessCell& chessCell, ChessPiece* chessPiece = nullptr);
-  private:
-    std::array<std::array<ChessCell, BOARD_WIDTH>, BOARD_HEIGHT> boardArray;
+    void addCell(const ChessPosition &chessPosition, const CHESS_TERRAIN &chessTerrain, const ChessPiece& chessPiece);
+    std::array<std::array<ChessCell, ChessBoardLayout::BOARD_WIDTH>, ChessBoardLayout::BOARD_HEIGHT> boardArray;
 };
-#endif  // !__CHESS_BOARD_H

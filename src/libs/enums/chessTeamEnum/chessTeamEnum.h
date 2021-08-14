@@ -1,8 +1,6 @@
-#ifndef __CHESS_TEAM_ENUM_H
-#define __CHESS_TEAM_ENUM_H
+#pragma once
 #include <map>
 #include <string>
-enum class CHESS_TEAM { UNDEFINED, RED, BLUE };
+#include <QDir>
 
-extern const std::map<std::string, CHESS_TEAM> CHESS_TEAM_DICTIONARY;
-#endif
+enum class CHESS_TEAM { UNDEFINED, RED, BLUE };

@@ -2,38 +2,33 @@
 
 const QString WidgetElapsedClock::CLOCK_FORMAT = "hh:mm:ss";
 
-WidgetElapsedClock::~WidgetElapsedClock() {}
+WidgetElapsedClock::~WidgetElapsedClock() = default;
 
-WidgetElapsedClock::WidgetElapsedClock(QWidget* parent) : QWidget(parent) {
-  QHBoxLayout* clockWidgetMainLayout = new QHBoxLayout();
-  this->setLayout(clockWidgetMainLayout);
+WidgetElapsedClock::WidgetElapsedClock(QWidget* parent) : StyleWidget<QWidget>(parent) {
+    ui.setupUi(this);
 
-  this->setSizePolicy(QSizePolicy::Policy::Preferred,
-                      QSizePolicy::Policy::Fixed);
-  this->setFixedHeight(CLOCK_WIDGET_HEIGHT);
-
-  this->timer_label.setText(this->getElapsedTime());
-  clockWidgetMainLayout->addWidget(&this->timer_label);
-
-  clockWidgetMainLayout->addWidget(&this->startButton);
-  connect(&this->startButton, &QPushButton::released, this,
-          &WidgetElapsedClock::startClock);
-  connect(&this->timer, &QTimer::timeout, this,
-          &WidgetElapsedClock::updateClockLabel);
-
-  clockWidgetMainLayout->setMargin(0);
+    ui.timerLabel->setText(formatElapsedTime(elapsedTime));
+    connect(ui.startButton, &QPushButton::released, this, &WidgetElapsedClock::startClock);
+    connect(&timer, &QTimer::timeout, this, &WidgetElapsedClock::updateClockLabel);
 }
 
-QString WidgetElapsedClock::getElapsedTime() {
-  return this->elapsedTime.toString(WidgetElapsedClock::CLOCK_FORMAT);
+QString WidgetElapsedClock::formatElapsedTime(const QTime& time) {
+  return time.toString(WidgetElapsedClock::CLOCK_FORMAT);
 }
 
 void WidgetElapsedClock::startClock() {
-  this->timer.start(WidgetElapsedClock::TIMER_TIMEOUT);
+  timer.start(WidgetElapsedClock::TIMER_TIMEOUT);
 }
 
 void WidgetElapsedClock::updateClockLabel() {
-  this->elapsedTime =
-      this->elapsedTime.addMSecs(WidgetElapsedClock::TIMER_TIMEOUT);
-  this->timer_label.setText(this->getElapsedTime());
+  elapsedTime = elapsedTime.addMSecs(WidgetElapsedClock::TIMER_TIMEOUT);
+  ui.timerLabel->setText(formatElapsedTime(elapsedTime));
+}
+
+QDir WidgetElapsedClock::cssDir() const {
+    return {":/styles/widgetElapsedClock"};
+}
+
+QString WidgetElapsedClock::objectName() const {\
+    return "widgetElapsedClock";
 }

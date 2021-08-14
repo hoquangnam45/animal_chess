@@ -1,10 +1,38 @@
 chess_configuration:
-- [{ type: "LION", team: "RED" }, null, null, null, null, null, { type: "TIGER", team: "RED" }]
-- [null, { type: "DOG", team: "RED" }, null, null, null, { type: "CAT", team: "RED" }, null]
-- [{ type: "MOUSE", team: "RED" }, null, { type: "LEOPARD", team: "RED" }, null, { type: "WOLF", team: "RED" }, null, { type: "ELEPHANT", team: "RED" }]
-- [null, null, null, null, null, null, null]
-- [null, null, null, null, null, null, null]
-- [null, null, null, null, null, null, null]
-- [{ type: "ELEPHANT", team: "BLUE" }, null, { type: "WOLF", team: "BLUE" }, null, { type: "LEOPARD", team: "BLUE" }, null, { type: "MOUSE", team: "BLUE" }]
-- [null, { type: "CAT", team: "BLUE" }, null, null, null, { type: "DOG", team: "BLUE" }, null]
-- [{ type: "TIGER", team: "BLUE" }, null, null, null, null, null, { type: "LION", team: "BLUE" }]
+  - [ { type: "LION", team: "RED" , terrain: "LAND" }, { terrain: "LAND" }, { terrain: "TRAP_RED" }, { terrain: "GOAL_RED" }, { terrain: "TRAP_RED" }, { terrain: "LAND" }, { type: "TIGER", team: "RED" , terrain: "LAND" } ]
+  - [ { terrain: "LAND" }, { type: "DOG", team: "RED" , terrain: "LAND" }, { terrain: "LAND" }, { terrain: "TRAP_RED" }, { terrain: "LAND" }, { type: "CAT", team: "RED" , terrain: "LAND" }, { terrain: "LAND" } ]
+  - [ { type: "MOUSE", team: "RED" , terrain: "LAND" }, { terrain: "LAND" }, { type: "LEOPARD", team: "RED" , terrain: "LAND" }, { terrain: "LAND" }, { type: "WOLF", team: "RED" , terrain: "LAND" }, { terrain: "LAND" }, { type: "ELEPHANT", team: "RED" , terrain: "LAND" } ]
+  - [ { terrain: "LAND" }, { terrain: "WATER" }, { terrain: "WATER" }, { terrain: "LAND" }, { terrain: "WATER" }, { terrain: "WATER" }, { terrain: "LAND" } ]
+  - [ { terrain: "LAND" }, { terrain: "WATER" }, { terrain: "WATER" }, { terrain: "LAND" }, { terrain: "WATER" }, { terrain: "WATER" }, { terrain: "LAND" } ]
+  - [ { terrain: "LAND" }, { terrain: "WATER" }, { terrain: "WATER" }, { terrain: "LAND" }, { terrain: "WATER" }, { terrain: "WATER" }, { terrain: "LAND" } ]
+  - [ { type: "ELEPHANT", team: "BLUE" , terrain: "LAND" }, { terrain: "LAND" }, { type: "WOLF", team: "BLUE" , terrain: "LAND" }, { terrain: "LAND" }, { type: "LEOPARD", team: "BLUE" , terrain: "LAND" }, { terrain: "LAND" }, { type: "MOUSE", team: "BLUE" , terrain: "LAND" } ]
+  - [ { terrain: "LAND" }, { type: "CAT", team: "BLUE" , terrain: "LAND" }, { terrain: "LAND" }, { terrain: "TRAP_BLUE" }, { terrain: "LAND" }, { type: "DOG", team: "BLUE" , terrain: "LAND" }, { terrain: "LAND" } ]
+  - [ { type: "TIGER", team: "BLUE" , terrain: "LAND" }, { terrain: "LAND" }, { terrain: "TRAP_BLUE" }, { terrain: "GOAL_BLUE" }, { terrain: "TRAP_BLUE" }, { terrain: "LAND" }, { type: "LION", team: "BLUE" , terrain: "LAND" } ]
+
+resources:
+  terrains:
+    - { terrain: "WATER", dir: ":/asset_visual/terrain_background/terrainRiver" }
+    - { terrain: "LAND", dir: ":/asset_visual/terrain_background/terrainGrass" }
+    - { terrain: "TRAP_RED", dir: ":/asset_visual/terrain_background/terrainTrapRed" }
+    - { terrain: "TRAP_BLUE", dir: ":/asset_visual/terrain_background/terrainTrapBlue" }
+    - { terrain: "GOAL_RED", dir: ":/asset_visual/terrain_background/terrainGoalRed" }
+    - { terrain: "GOAL_BLUE", dir: ":/asset_visual/terrain_background/terrainGoalBlue" }
+  pieces:
+    blue:
+      - { type: "CAT", dir: ":/asset_visual/chess_face/iconCatBlue" }
+      - { type: "DOG", dir: ":/asset_visual/chess_face/iconDogBlue" }
+      - { type: "ELEPHANT", dir: ":/asset_visual/chess_face/iconElephantBlue" }
+      - { type: "LEOPARD", dir: ":/asset_visual/chess_face/iconLeopardBlue" }
+      - { type: "LION", dir: ":/asset_visual/chess_face/iconLionBlue" }
+      - { type: "MOUSE", dir: ":/asset_visual/chess_face/iconMouseBlue" }
+      - { type: "TIGER", dir: ":/asset_visual/chess_face/iconTigerBlue" }
+      - { type: "WOLF", dir: ":/asset_visual/chess_face/iconWolfBlue" }
+    red:
+      - { type: "CAT", dir: ":/asset_visual/chess_face/iconCatRed" }
+      - { type: "DOG", dir: ":/asset_visual/chess_face/iconDogRed" }
+      - { type: "ELEPHANT", dir: ":/asset_visual/chess_face/iconElephantRed" }
+      - { type: "LEOPARD", dir: ":/asset_visual/chess_face/iconLeopardRed" }
+      - { type: "LION", dir: ":/asset_visual/chess_face/iconLionRed" }
+      - { type: "MOUSE", dir: ":/asset_visual/chess_face/iconMouseRed" }
+      - { type: "TIGER", dir: ":/asset_visual/chess_face/iconTigerRed" }
+      - { type: "WOLF", dir: ":/asset_visual/chess_face/iconWolfRed" }

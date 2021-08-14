@@ -4,14 +4,8 @@ ChessCell::ChessCell(const ChessPosition& chessPosition) {
   this->chessPosition = chessPosition;
 }
 
-ChessCell::ChessCell() {
-  return;
-}
+ChessCell::~ChessCell() = default;
 
-ChessCell::~ChessCell() {
-  if (this->standingPiece) {
-    delete this->standingPiece;
-    this->standingPiece = nullptr;
-  }
-  return;
-}
+ChessCell::ChessCell(ChessCell&& b) noexcept: chessPosition(b.chessPosition), chessTerrain(b.chessTerrain), standingPiece(std::move(b.standingPiece)) {}
+
+ChessCell::ChessCell(): chessTerrain(CHESS_TERRAIN::UNDEFINED) {}

@@ -18,14 +18,20 @@
         <file alias="iconWolfRed">asset/piece_face_image/wolf_red.png</file>
     </qresource>
     <qresource prefix="/asset_visual/terrain_background">
-        <file alias="terrainGoalBlue">asset/terrain_background/goal_blue.png</file>
-        <file alias="terrainGoalRed">asset/terrain_background/goal_red.png</file>
+        <file alias="terrainGoalBlue">asset/terrain_background/goal_blue_2.png</file>
+        <file alias="terrainGoalRed">asset/terrain_background/goal_red_2.png</file>
         <file alias="terrainGrass">asset/terrain_background/grass.png</file>
         <file alias="terrainRiver">asset/terrain_background/river.png</file>
-        <file alias="terrainTrapBlue">asset/terrain_background/trap_blue.png</file>
-        <file alias="terrainTrapRed">asset/terrain_background/trap_red.png</file>
+        <file alias="terrainTrapBlue">asset/terrain_background/trap_blue_2.png</file>
+        <file alias="terrainTrapRed">asset/terrain_background/trap_red_2.png</file>
     </qresource>
     <qresource prefix="/config">
         <file alias="defaultChessConfig">configuration/chess_board.yaml</file>
+    </qresource>
+    <qresource prefix="/styles">
+        <file alias="widgetChessBoard">styles/widgetChessBoard.css</file>
+        <file alias="mainWindowUI">styles/mainWindowUI.css</file>
+        <file alias="widgetChessCell">styles/widgetChessCell.css</file>
+        <file alias="widgetElapsedClock">styles/widgetElapsedClock.css</file>
     </qresource>
 </RCC>

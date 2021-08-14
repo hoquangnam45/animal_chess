@@ -1,16 +1,16 @@
-#ifndef __CHESS_CELL_H
-#define __CHESS_CELL_H
+#pragma once
 
 #include <chessElement/chessPiece/chessPiece.h>
 #include <enums/chessTerrainEnum/chessTerrainEnum.h>
+#include <memory>
 
 class ChessCell {
- public:
-  ChessPiece* standingPiece = nullptr;
-  ChessPosition chessPosition;
-  CHESS_TERRAIN chessTerrain = CHESS_TERRAIN::UNDEFINED;
-  ChessCell(const ChessPosition& chessPostition);
-  ChessCell();
-  ~ChessCell();
+    public:
+        std::unique_ptr<ChessPiece> standingPiece;
+        ChessPosition chessPosition;
+        CHESS_TERRAIN chessTerrain = CHESS_TERRAIN::UNDEFINED;
+        explicit ChessCell(const ChessPosition& chessPosition);
+        ChessCell(ChessCell&& b) noexcept;
+        ChessCell();
+        ~ChessCell();
 };
-#endif

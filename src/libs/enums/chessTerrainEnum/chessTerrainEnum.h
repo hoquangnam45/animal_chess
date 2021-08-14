@@ -1,10 +1,11 @@
-#ifndef __CHESS_TERRAIN_ENUM_H
-#define __CHESS_TERRAIN_ENUM_H
+#pragma once
 enum class CHESS_TERRAIN {
-  UNDEFINED,
-  LAND,
-  WATER,
-  TRAP,
-  GOAL,
+    UNDEFINED,
+    LAND,
+    WATER,
+    TRAP_RED,
+    TRAP_BLUE,
+    GOAL_RED,
+    GOAL_BLUE
 };
-#endif
+

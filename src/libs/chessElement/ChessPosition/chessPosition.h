@@ -1,11 +1,8 @@
-#ifndef __CHESS_POSITION_H
-#define __CHESS_POSITION_H
+#pragma once
 class ChessPosition {
- public:
-  int row;
-  int col;
-  ChessPosition();
-  ChessPosition(int row, int col);
-  ~ChessPosition();
+    public:
+        int m_row;
+        int m_col;
+        explicit ChessPosition(int row = -1, int col = -1);
+        ~ChessPosition();
 };
-#endif
