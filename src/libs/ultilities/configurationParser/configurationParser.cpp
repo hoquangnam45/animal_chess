@@ -1,17 +1,14 @@
 #include "configurationParser.h"
 
-// Forward declaration
-std::map<CHESS_TERRAIN, QDir> readTerrainMap();
-std::map<CHESS_TEAM, std::map<CHESS_TYPE, QDir>> readPieceMap();
-YAML::Node readDefaultConfig();
+ConfigurationParser* ConfigurationParser::INSTANCE = nullptr;
 
-// Static initialization
-const QDir ConfigurationParser::DEFAULT_CONFIGURATION_PATH(":/config/defaultChessConfig");
-const YAML::Node ConfigurationParser::defaultConfig = readDefaultConfig();
-std::map<CHESS_TERRAIN, QDir> ConfigurationParser::TERRAIN_RESOURCES = readTerrainMap();
-std::map<CHESS_TEAM, std::map<CHESS_TYPE, QDir>> ConfigurationParser::PIECE_RESOURCES = readPieceMap();
+ConfigurationParser::ConfigurationParser() :
+    DEFAULT_CONFIGURATION_PATH(":/config/defaultChessConfig"),
+    TERRAIN_RESOURCES(ConfigurationParser::readTerrainMap()),
+    PIECE_RESOURCES(ConfigurationParser::readPieceMap()),
+    defaultConfig(ConfigurationParser::readDefaultConfig()) {}
 
-ChessBoard ConfigurationParser::constructChessBoard(const QDir& filePath) {
+ChessBoard ConfigurationParser::constructChessBoard(const QString& filePath) {
     YAML::Node config;
     try {
         config = readConfig(filePath)["chess_configuration"];
@@ -50,23 +47,23 @@ void ConfigurationParser::assertBoardSize(const YAML::Node& config) {
     }
 }
 
-YAML::Node ConfigurationParser::readConfig(const QDir& dir) {
-    if (!QFile::exists(dir.absolutePath())) {
-        throw std::exception("Cannot read config");
+YAML::Node ConfigurationParser::readConfig(const QString& dir) {
+    if (!QFile::exists(dir)) {
+        throw std::runtime_error("Cannot read config");
     }
-    QFile configFile(dir.path());
+    QFile configFile(dir);
     configFile.open(QIODevice::ReadOnly);
     QTextStream in(&configFile);
     QString content = in.readAll();
     return YAML::Load(content.toStdString());
 }
 
-std::map<CHESS_TEAM, std::map<CHESS_TYPE, QDir>> readPieceMap() {
+std::map<CHESS_TEAM, std::map<CHESS_TYPE, QString>> ConfigurationParser::readPieceMap() {
     YAML::Node configRed = ConfigurationParser::defaultConfig["resources"]["pieces"]["red"];
     YAML::Node configBlue = ConfigurationParser::defaultConfig["resources"]["pieces"]["blue"];
-    std::map<CHESS_TEAM, std::map<CHESS_TYPE, QDir>> map = {
-        {CHESS_TEAM::RED, std::map<CHESS_TYPE, QDir>()},
-        {CHESS_TEAM::BLUE, std::map<CHESS_TYPE, QDir>()},
+    std::map<CHESS_TEAM, std::map<CHESS_TYPE, QString>> map = {
+        {CHESS_TEAM::RED, {}},
+        {CHESS_TEAM::BLUE, {}},
     };
     for (auto item: configRed) {
         auto type = magic_enum::enum_cast<CHESS_TYPE>(item["type"].as<std::string>()).value();
@@ -81,9 +78,9 @@ std::map<CHESS_TEAM, std::map<CHESS_TYPE, QDir>> readPieceMap() {
     return map;
 }
 
-std::map<CHESS_TERRAIN, QDir> readTerrainMap() {
-    YAML::Node config = ConfigurationParser::defaultConfig["resources"]["terrains"];
-    auto map = std::map<CHESS_TERRAIN, QDir>();
+std::map<CHESS_TERRAIN, QString> ConfigurationParser::readTerrainMap() {
+    YAML::Node config = defaultConfig["resources"]["terrains"];
+    auto map = std::map<CHESS_TERRAIN, QString>();
     for (auto item: config) {
         auto terrain = magic_enum::enum_cast<CHESS_TERRAIN>(item["terrain"].as<std::string>()).value();
         auto dir = QString::fromStdString(item["dir"].as<std::string>());
@@ -92,11 +89,37 @@ std::map<CHESS_TERRAIN, QDir> readTerrainMap() {
     return map;
 }
 
-YAML::Node readDefaultConfig() {
+YAML::Node ConfigurationParser::readDefaultConfig() {
     // Why include this: https://doc.qt.io/qt-5/resources.html#using-resources-in-a-library
     // Since at this stage the qt resource had not been initialized, so it had to be manually initialized
     Q_INIT_RESOURCE(resourceMap);
-    return ConfigurationParser::readConfig(ConfigurationParser::DEFAULT_CONFIGURATION_PATH);
+    return ConfigurationParser::readConfig(DEFAULT_CONFIGURATION_PATH);
 }
 
+QString ConfigurationParser::terrainResource(CHESS_TERRAIN terrain) {
+    auto ret = TERRAIN_RESOURCES.find(terrain);
+    if (ret == TERRAIN_RESOURCES.end()) {
+        return {};
+    }
+    return ret->second;
+}
+
+QString ConfigurationParser::pieceResource(CHESS_TEAM team, CHESS_TYPE type) {
+    auto ret = PIECE_RESOURCES.find(team);
+    if (ret == PIECE_RESOURCES.end()) {
+        return {};
+    }
+    auto ret2 = ret->second.find(type);
+    if (ret2 == ret->second.end()) {
+        return {};
+    }
+    return ret2->second;
+}
+
+ConfigurationParser& ConfigurationParser::getInstance() {
+    if (!ConfigurationParser::INSTANCE) {
+        ConfigurationParser::INSTANCE = new ConfigurationParser();
+    }
+    return *ConfigurationParser::INSTANCE;
+}
 

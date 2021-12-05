@@ -13,29 +13,28 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include <ui_widgetElapsedClock.h>
-#include <ultilities/function/helper.h>
-#include <widgets/styleWidget/styleWidget.hpp>
+#include <component/styler/styler.h>
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
-    Ui::WidgetElapsedClock;
+    class WidgetElapsedClock;
 }
 QT_END_NAMESPACE
-class WidgetElapsedClock : public StyleWidget<QWidget> {
+class WidgetElapsedClock : public QWidget {
     Q_OBJECT
     private:
         static const int TIMER_TIMEOUT = 1000;
-        static const QString CLOCK_FORMAT;
+        const QString CLOCK_FORMAT;
+        Styler styler;
         QTimer timer;
         QTime elapsedTime = QTime(0, 0, 0);
         Ui::WidgetElapsedClock ui;
-    protected:
-        QDir cssDir() const override;
-        QString objectName() const override;
     private slots:
         void updateClockLabel();
         void startClock();
     public:
+        void paintEvent(QPaintEvent* e) override;
         explicit WidgetElapsedClock(QWidget* parent = nullptr);
         ~WidgetElapsedClock() override;
-        static QString formatElapsedTime(const QTime& time);
+        QString getElapsedTime();
 };

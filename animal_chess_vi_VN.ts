@@ -49,6 +49,24 @@
         <source>WidgetChessCell</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="src/libs/widgets/widgetChessCell/widgetChessCell.ui" line="28"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>WidgetChessPiece</name>
+    <message>
+        <location filename="src/libs/widgets/widgetChessPiece/widgetChessPiece.ui" line="20"/>
+        <source>WidgetChessPiece</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/libs/widgets/widgetChessPiece/widgetChessPiece.ui" line="34"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>WidgetElapsedClock</name>

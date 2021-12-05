@@ -32,6 +32,7 @@
         <file alias="widgetChessBoard">styles/widgetChessBoard.css</file>
         <file alias="mainWindowUI">styles/mainWindowUI.css</file>
         <file alias="widgetChessCell">styles/widgetChessCell.css</file>
+        <file alias="widgetChessPiece">styles/widgetChessPiece.css</file>
         <file alias="widgetElapsedClock">styles/widgetElapsedClock.css</file>
     </qresource>
 </RCC>

@@ -47,9 +47,8 @@ void ChessBoardLayout::setGeometry(const QRect &rect) {
     QPoint topLeft = QPoint((widgetWidth - boardWidth) / 2, 0);
     for (int i = 0; i < count(); i++) {
         auto item = itemAt(i);
-        int row = i / BOARD_WIDTH;
-        int col = i % BOARD_WIDTH;
-        item->setGeometry(QRect(topLeft + QPoint(col * cellSize.width(), row * cellSize.height()), cellSize));
+        ChessPosition pos = ChessBoardLayout::unflattenIdx(i);
+        item->setGeometry(QRect(topLeft + QPoint(pos.m_col * cellSize.width(), pos.m_row * cellSize.height()), cellSize));
     }
 }
 
@@ -59,4 +58,14 @@ ChessBoardLayout::~ChessBoardLayout() {
     while (auto item = takeAt(0)) {
         delete item;
     }
+}
+
+int ChessBoardLayout::flattenIdx(const ChessPosition& pos) {
+    return pos.m_row * BOARD_WIDTH + pos.m_col;
+}
+
+ChessPosition ChessBoardLayout::unflattenIdx(int flattenIdx) {
+    int row = flattenIdx / BOARD_WIDTH;
+    int col = flattenIdx % BOARD_WIDTH;
+    return ChessPosition(row, col);
 }

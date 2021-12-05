@@ -5,8 +5,8 @@ project(animal_chess LANGUAGES CXX)
 # Export compile_commands.json for clangd for code suggestion in some ide like vscode, but only with Makefile-like generator
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "")
 
-# To use clang compiler clang-cl on windows: Please set environment using vcvarsall.bat first
-# This is intend for gcc-compatible compiler
+# To use clang compiler clang-cl on windows: Set environment using vcvarsall.bat first
+# This is intend for gcc-compatible(clang, gcc) compiler
 if (MSVC)
   add_compile_options(-Wno-missing-declarations)
 else()
@@ -26,31 +26,17 @@ include(deps/conan.cmake)
 include_directories(src/libs)
 include_directories(src)
 
-# QtCreator supports the following variables for Android, which are identical to qmake Android variables.
-# Check http://doc.qt.io/qt-5/deployment-android.html for more information.
-# They need to be set before the find_package(Qt5 ...) call.
-
-#if(ANDROID)
-#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
-#    if (ANDROID_ABI STREQUAL "armeabi-v7a")
-#        set(ANDROID_EXTRA_LIBS
-#            ${CMAKE_CURRENT_SOURCE_DIR}/path/to/libcrypto.so
-#            ${CMAKE_CURRENT_SOURCE_DIR}/path/to/libssl.so)
-#    endif()
-#endif()
-
-find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets LinguistTools REQUIRED)
-find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets LinguistTools REQUIRED)
-
 # USING THIS PATTERN TO DISALLOW IT SCAN HEADER SEARCH TO COMPILE NECESSARY FILE WHICH LEAD TO LONG COMPILE TIME
 set(CMAKE_AUTOUIC ON) # Compile ui file
 set(CMAKE_AUTORCC ON) # Compile resource file
 set(CMAKE_AUTOMOC ON) # Compile qt object macro
+
+find_package(Qt6 COMPONENTS Widgets LinguistTools REQUIRED)
+
 file(GLOB_RECURSE SOURCE_FILES "src/*.cpp" "src/*.ui")
 set(RESOURCE_FILES "resources/resourceMap.qrc")
 set(LINGUIST_FILES "animal_chess_vi_VN.ts") # List of different version of linguist files
 qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR}/src ${LINGUIST_FILES})
-
 
 if(ANDROID)
   add_library(animal_chess SHARED

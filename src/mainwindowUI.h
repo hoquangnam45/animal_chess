@@ -8,7 +8,6 @@
 #include <widgets/widgetChessBoard/widgetChessBoard.h>
 #include <widgets/widgetElapsedClock/widgetElapsedClock.h>
 #include <ui_mainwindowUI.h>
-#include <widgets/styleWidget/styleWidget.hpp>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -16,15 +15,13 @@ namespace Ui {
 }
 QT_END_NAMESPACE
 
-class MainWindowUI : public StyleWidget<QMainWindow> {
+class MainWindowUI : public QMainWindow {
     Q_OBJECT
     public:
         explicit MainWindowUI(QWidget* parent = nullptr);
         ~MainWindowUI() override;
-    protected:
-        QString objectName() const override;
-        QDir cssDir() const override;
     private:
+        Styler styler;
         Ui::MainWindowUI ui;
         WidgetElapsedClock elapsedClock;
         WidgetChessBoard chessBoard;

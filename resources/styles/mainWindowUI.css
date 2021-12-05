@@ -1,16 +1,20 @@
 MainWindowUI {
-    border: 1px solid black;
+    border: 5px solid black;
 }
 
 WidgetElapsedClock {
     border: 1px solid aqua;
 }
 
-WidgetChessBoard {
-    border: 1px solid crimson;
-}
+/*WidgetChessBoard {*/
+/*    border: 1px solid crimson;*/
+/*}*/
 
 WidgetChessCell {
-    border: 1px solid gold;
+    border: 48px solid black;
+}
+
+WidgetChessPiece {
+    border: 1px solid red;
 }
 

@@ -24,7 +24,7 @@ resources:
       - { type: "ELEPHANT", dir: ":/asset_visual/chess_face/iconElephantBlue" }
       - { type: "LEOPARD", dir: ":/asset_visual/chess_face/iconLeopardBlue" }
       - { type: "LION", dir: ":/asset_visual/chess_face/iconLionBlue" }
-      - { type: "MOUSE", dir: ":/asset_visual/chess_face/iconMouseBlue" }
+      - { type: "MOUSE", dir: ":/asset_visual/chess_face/iconRatBlue" }
       - { type: "TIGER", dir: ":/asset_visual/chess_face/iconTigerBlue" }
       - { type: "WOLF", dir: ":/asset_visual/chess_face/iconWolfBlue" }
     red:
@@ -33,6 +33,6 @@ resources:
       - { type: "ELEPHANT", dir: ":/asset_visual/chess_face/iconElephantRed" }
       - { type: "LEOPARD", dir: ":/asset_visual/chess_face/iconLeopardRed" }
       - { type: "LION", dir: ":/asset_visual/chess_face/iconLionRed" }
-      - { type: "MOUSE", dir: ":/asset_visual/chess_face/iconMouseRed" }
+      - { type: "MOUSE", dir: ":/asset_visual/chess_face/iconRatRed" }
       - { type: "TIGER", dir: ":/asset_visual/chess_face/iconTigerRed" }
       - { type: "WOLF", dir: ":/asset_visual/chess_face/iconWolfRed" }

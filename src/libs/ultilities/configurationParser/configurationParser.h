@@ -16,16 +16,21 @@
 
 class ConfigurationParser {
     public:
-        static ChessBoard constructChessBoard(const QDir& filePath);
-        static ChessBoard constructChessBoard();
-        static std::map<CHESS_TERRAIN, QDir> TERRAIN_RESOURCES;
-        static std::map<CHESS_TEAM, std::map<CHESS_TYPE, QDir>> PIECE_RESOURCES;
+        static ConfigurationParser& getInstance();
+        ChessBoard constructChessBoard(const QString& filePath);
+        ChessBoard constructChessBoard();
+        QString terrainResource(CHESS_TERRAIN terrain);
+        QString pieceResource(CHESS_TEAM team, CHESS_TYPE type);
     private:
+        ConfigurationParser();
+        static ConfigurationParser* INSTANCE;
         static void assertBoardSize(const YAML::Node& config);
-        static YAML::Node readConfig(const QDir& dir) noexcept(false);
-        static const QDir DEFAULT_CONFIGURATION_PATH;
-        static const YAML::Node defaultConfig;
-        friend std::map<CHESS_TERRAIN, QDir> readTerrainMap();
-        friend std::map<CHESS_TEAM, std::map<CHESS_TYPE, QDir>> readPieceMap();
-        friend YAML::Node readDefaultConfig();
+        static YAML::Node readConfig(const QString& dir) noexcept(false);
+        const QString DEFAULT_CONFIGURATION_PATH;
+        const YAML::Node defaultConfig;
+        std::map<CHESS_TERRAIN, QString> TERRAIN_RESOURCES;
+        std::map<CHESS_TEAM, std::map<CHESS_TYPE, QString>> PIECE_RESOURCES;
+        std::map<CHESS_TERRAIN, QString> readTerrainMap();
+        std::map<CHESS_TEAM, std::map<CHESS_TYPE, QString>> readPieceMap();
+        YAML::Node readDefaultConfig();
 };

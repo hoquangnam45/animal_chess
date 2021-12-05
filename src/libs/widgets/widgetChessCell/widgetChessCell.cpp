@@ -1,26 +1,45 @@
 #include "widgetChessCell.h"
 
-WidgetChessCell::WidgetChessCell(const ChessCell& chessCell, QWidget* parent): StyleWidget<QLabel>(parent), chessCell(chessCell) {
+WidgetChessCell::WidgetChessCell(QWidget *parent, const ChessCell &chessCell):
+    chessCell(chessCell),
+    ui(),
+    styler(this, ":/styles/widgetChessCell"),
+    parser(ConfigurationParser::getInstance()) {
+    m_terrain = QPixmap(parser.terrainResource(chessCell.chessTerrain));
     ui.setupUi(this);
-    QDir terrainDir(ConfigurationParser::TERRAIN_RESOURCES.at(chessCell.chessTerrain));
+    ui.terrain->setLayout([] () {
+        auto* layout = new QHBoxLayout();
+        layout->setContentsMargins(0,0,0,0);
+        return layout;
+    } ());
     if (chessCell.standingPiece) {
-        QDir pieceDir(ConfigurationParser::PIECE_RESOURCES.at(chessCell.standingPiece->chessTeam).at(chessCell.standingPiece->chessType));
-        m_chessPiece = QPixmap(pieceDir.canonicalPath());
+        p_widgetChessPiece = std::make_unique<WidgetChessPiece>(nullptr, *chessCell.standingPiece);
+        addPiece();
     }
-    m_terrain = QPixmap(terrainDir.canonicalPath());
+
+    ui.topLayout->setContentsMargins(0,0,0,0);
 }
 
 WidgetChessCell::~WidgetChessCell() = default;
 
-QDir WidgetChessCell::cssDir() const {
-    return {":/styles/widgetChessCell"};
-}
-
-QString WidgetChessCell::objectName() const {
-    return {};
-}
-
 void WidgetChessCell::resizeEvent(QResizeEvent *e) {
     QWidget::resizeEvent(e);
-    setPixmap(m_terrain.scaled(e->size()));
+    ui.terrain->setPixmap(m_terrain.scaled(this->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+    updateSize();
+}
+
+void WidgetChessCell::updateSize() {
+    return ui.terrain->setGeometry(parentWidget()->geometry());
+}
+
+void WidgetChessCell::enterEvent(QEnterEvent *event) {
+    qDebug() << event;
+}
+
+void WidgetChessCell::addPiece() {
+    ui.terrain->layout()->addWidget(p_widgetChessPiece.get());
+}
+
+void WidgetChessCell::removePiece() {
+    ui.terrain->layout()->removeWidget(p_widgetChessPiece.get());
 }

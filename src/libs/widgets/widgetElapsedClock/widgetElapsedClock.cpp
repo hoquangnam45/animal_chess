@@ -1,19 +1,20 @@
 #include "widgetElapsedClock.h"
 
-const QString WidgetElapsedClock::CLOCK_FORMAT = "hh:mm:ss";
-
 WidgetElapsedClock::~WidgetElapsedClock() = default;
 
-WidgetElapsedClock::WidgetElapsedClock(QWidget* parent) : StyleWidget<QWidget>(parent) {
+WidgetElapsedClock::WidgetElapsedClock(QWidget* parent) :
+    CLOCK_FORMAT("hh:mm:ss"),
+    styler(this, ":/styles/widgetElapsedClock"),
+    ui() {
     ui.setupUi(this);
 
-    ui.timerLabel->setText(formatElapsedTime(elapsedTime));
+    ui.timerLabel->setText(getElapsedTime());
     connect(ui.startButton, &QPushButton::released, this, &WidgetElapsedClock::startClock);
     connect(&timer, &QTimer::timeout, this, &WidgetElapsedClock::updateClockLabel);
 }
 
-QString WidgetElapsedClock::formatElapsedTime(const QTime& time) {
-  return time.toString(WidgetElapsedClock::CLOCK_FORMAT);
+QString WidgetElapsedClock::getElapsedTime() {
+  return elapsedTime.toString(CLOCK_FORMAT);
 }
 
 void WidgetElapsedClock::startClock() {
@@ -22,13 +23,9 @@ void WidgetElapsedClock::startClock() {
 
 void WidgetElapsedClock::updateClockLabel() {
   elapsedTime = elapsedTime.addMSecs(WidgetElapsedClock::TIMER_TIMEOUT);
-  ui.timerLabel->setText(formatElapsedTime(elapsedTime));
+  ui.timerLabel->setText(getElapsedTime());
 }
 
-QDir WidgetElapsedClock::cssDir() const {
-    return {":/styles/widgetElapsedClock"};
-}
-
-QString WidgetElapsedClock::objectName() const {\
-    return "widgetElapsedClock";
-}
+void WidgetElapsedClock::paintEvent(QPaintEvent* e) {
+    styler.handlePaintEvent();
+};

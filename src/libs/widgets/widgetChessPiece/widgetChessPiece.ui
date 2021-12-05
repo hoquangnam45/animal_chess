@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>WidgetChessCell</class>
- <widget class="QWidget" name="WidgetChessCell">
+ <class>WidgetChessPiece</class>
+ <widget class="QWidget" name="WidgetChessPiece">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -17,13 +17,19 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>WidgetChessCell</string>
+   <string>WidgetChessPiece</string>
   </property>
   <layout class="QVBoxLayout" name="topLayout">
    <item>
     <layout class="QVBoxLayout" name="mainLayout">
      <item>
-      <widget class="QLabel" name="terrain">
+      <widget class="QLabel" name="label">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
         <string>TextLabel</string>
        </property>

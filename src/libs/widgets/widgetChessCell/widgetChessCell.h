@@ -4,11 +4,11 @@
 #include <chessElement/chessCell/chessCell.h>
 #include <QLabel>
 #include <chessElement/chessBoard/chessBoard.h>
-#include <ultilities/function/helper.h>
 #include <QResizeEvent>
 #include <QLayout>
 #include <ultilities/configurationParser/configurationParser.h>
-#include <widgets/styleWidget/styleWidget.hpp>
+#include <widgets/widgetChessPiece/widgetChessPiece.h>
+#include <component/styler/styler.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -16,18 +16,23 @@ namespace Ui {
 }
 QT_END_NAMESPACE
 
-class WidgetChessCell: public StyleWidget<QLabel> {
+class WidgetChessCell: public QWidget {
     Q_OBJECT
     private:
+        Styler styler;
+        const ChessCell& chessCell;
         Ui::WidgetChessCell ui;
         QPixmap m_terrain;
         QPixmap m_chessPiece;
-        const ChessCell& chessCell;
+        ConfigurationParser& parser;
     protected:
-        QDir cssDir() const override;
-        QString objectName() const override;
+        void enterEvent(QEnterEvent* event) override;
     public:
-        explicit WidgetChessCell(const ChessCell& chessCell, QWidget* parent = nullptr);
+        WidgetChessCell(QWidget *parent, const ChessCell &chessCell);
         ~WidgetChessCell() override;
         void resizeEvent(QResizeEvent* e) override;
+        void updateSize();
+        void addPiece();
+        void removePiece();
+        std::unique_ptr<WidgetChessPiece> p_widgetChessPiece;
 };

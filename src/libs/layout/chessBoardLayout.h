@@ -4,6 +4,7 @@
 #include <vector>
 #include <array>
 #include <memory>
+#include <chessElement/ChessPosition/chessPosition.h>
 
 class ChessBoardLayout: public QLayout {
     private:
@@ -22,4 +23,6 @@ class ChessBoardLayout: public QLayout {
         void setGeometry(const QRect &) override;
         static const int BOARD_WIDTH = 7;
         static const int BOARD_HEIGHT = 9;
+        static int flattenIdx(const ChessPosition& pos);
+        static ChessPosition unflattenIdx(int flattenIdx);
 };
