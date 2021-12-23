@@ -1,7 +1,9 @@
 #include "chessBoard.h"
 
+
 void ChessBoard::addCell(const ChessPosition &chessPosition, const CHESS_TERRAIN &chessTerrain, const ChessPiece& chessPiece) {
     ChessCell& ref = boardArray.at(chessPosition.m_row).at(chessPosition.m_col); // This has bound checking
+    chessPiece.chessCell = &ref;
     ref.chessPosition = chessPosition;
     ref.chessTerrain = chessTerrain;
     if (chessPiece.chessType != CHESS_TYPE::UNDEFINED && chessPiece.chessTeam != CHESS_TEAM::UNDEFINED) {
@@ -11,7 +13,7 @@ void ChessBoard::addCell(const ChessPosition &chessPosition, const CHESS_TERRAIN
 
 ChessBoard::ChessBoard(ChessBoard&& board,
                        std::function<void(const ChessPosition &fromPos, const ChessPosition &toPos)> updateFn):
-        updateFn(updateFn),
+        updateFn(std::move(updateFn)),
         boardArray(std::move(board.boardArray)) {}
 
 void ChessBoard::movePiece(const ChessPosition &fromPos, const ChessPosition &toPos) {

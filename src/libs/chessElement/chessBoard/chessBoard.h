@@ -2,6 +2,7 @@
 #include <chessElement/chessCell/chessCell.h>
 #include <array>
 #include <memory>
+#include <utility>
 #include <layout/chessBoardLayout.h>
 
 class ChessBoard {

@@ -3,6 +3,7 @@
 WidgetChessCell::WidgetChessCell(QWidget *parent, const ChessCell &chessCell):
     chessCell(chessCell),
     ui(),
+    dropper(this),
     styler(this, ":/styles/widgetChessCell"),
     parser(ConfigurationParser::getInstance()) {
     m_terrain = QPixmap(parser.terrainResource(chessCell.chessTerrain));
@@ -32,14 +33,22 @@ void WidgetChessCell::updateSize() {
     return ui.terrain->setGeometry(parentWidget()->geometry());
 }
 
-void WidgetChessCell::enterEvent(QEnterEvent *event) {
-    qDebug() << event;
-}
-
 void WidgetChessCell::addPiece() {
     ui.terrain->layout()->addWidget(p_widgetChessPiece.get());
 }
 
 void WidgetChessCell::removePiece() {
     ui.terrain->layout()->removeWidget(p_widgetChessPiece.get());
+}
+
+void WidgetChessCell::dragEnterEvent(QDragEnterEvent *event) {
+    dropper.handleDragEnterEvent(event, [] (auto* arg) { return shouldAcceptDrop(arg); });
+}
+
+void WidgetChessCell::dropEvent(QDropEvent *event) {
+    dropper.handleDropEvent(event, [] (auto* arg) { return shouldAcceptDrop(arg); });
+}
+
+bool WidgetChessCell::shouldAcceptDrop(QDropEvent* event) {
+    return event->mimeData()->objectName() == "WidgetChessPiece" && event->dropAction() == Qt::MoveAction;
 }

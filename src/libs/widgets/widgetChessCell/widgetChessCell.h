@@ -9,6 +9,7 @@
 #include <ultilities/configurationParser/configurationParser.h>
 #include <widgets/widgetChessPiece/widgetChessPiece.h>
 #include <component/styler/styler.h>
+#include <component/dropper/dropper.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -25,8 +26,7 @@ class WidgetChessCell: public QWidget {
         QPixmap m_terrain;
         QPixmap m_chessPiece;
         ConfigurationParser& parser;
-    protected:
-        void enterEvent(QEnterEvent* event) override;
+        Dropper dropper;
     public:
         WidgetChessCell(QWidget *parent, const ChessCell &chessCell);
         ~WidgetChessCell() override;
@@ -34,5 +34,8 @@ class WidgetChessCell: public QWidget {
         void updateSize();
         void addPiece();
         void removePiece();
+        void dragEnterEvent(QDragEnterEvent* event) override;
+        void dropEvent(QDropEvent* event) override;
+        static bool shouldAcceptDrop(QDropEvent* event);
         std::unique_ptr<WidgetChessPiece> p_widgetChessPiece;
 };

@@ -27,5 +27,6 @@ class WidgetChessBoard : public QWidget {
         ChessBoard controller;
         ChessBoardLayout layout;
         Styler styler;
-        Dragger dragger;
+        void moveChessWidgetToPosition(const ChessCell &cell);
+        void processChessWidgetByRow(const std::array<ChessCell, 7> &row);
 };

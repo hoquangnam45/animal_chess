@@ -6,13 +6,13 @@ project(animal_chess LANGUAGES CXX)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "")
 
 # To use clang compiler clang-cl on windows: Set environment using vcvarsall.bat first
-# This is intend for gcc-compatible(clang, gcc) compiler
-if (MSVC)
-  add_compile_options(-Wno-missing-declarations)
-else()
-  # lots of warnings and all warnings as errors
-  add_compile_options(-Wno-missing-declarations)
-endif()
+## This is intend for gcc-compatible(clang, gcc) compiler
+#if (MSVC)
+#  add_compile_options(-Wno-missing-declarations)
+#else()
+#  # lots of warnings and all warnings as errors
+#  add_compile_options(-Wno-missing-declarations)
+#endif()
 
 # Set c++ build level - For new feature of C++
 set(CMAKE_CXX_STANDARD 20)
@@ -35,7 +35,7 @@ find_package(Qt6 COMPONENTS Widgets LinguistTools REQUIRED)
 
 file(GLOB_RECURSE SOURCE_FILES "src/*.cpp" "src/*.ui")
 set(RESOURCE_FILES "resources/resourceMap.qrc")
-set(LINGUIST_FILES "animal_chess_vi_VN.ts") # List of different version of linguist files
+set(LINGUIST_FILES "animal_chess_vi_VN.ts" src/libs/component/dropper/dropper.cpp src/libs/component/dropper/dropper.h src/libs/logic/validMoveSuggester/ValidMoveSuggester.cpp src/libs/logic/validMoveSuggester/ValidMoveSuggester.h) # List of different version of linguist files
 qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR}/src ${LINGUIST_FILES})
 
 if(ANDROID)
