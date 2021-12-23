@@ -1,0 +1,87 @@
+[
+{
+  "directory": "/home/hoquangnam/Documents/animal_chess/build",
+  "command": "/bin/x86_64-linux-gnu-g++-11 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -Ianimal_chess_autogen/include -I/home/hoquangnam/.conan/data/yaml-cpp/0.7.0/_/_/package/2a63f338fd63cfdf27f3f42261415c769e45e632/include -I/home/hoquangnam/.conan/data/magic_enum/0.7.3/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include -I../src/libs -I../src -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtWidgets -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtCore -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/mkspecs/linux-g++ -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtGui -g  -Wno-missing-declarations -fPIC -std=c++2a -o CMakeFiles/animal_chess.dir/animal_chess_autogen/mocs_compilation.cpp.o -c /home/hoquangnam/Documents/animal_chess/build/animal_chess_autogen/mocs_compilation.cpp",
+  "file": "/home/hoquangnam/Documents/animal_chess/build/animal_chess_autogen/mocs_compilation.cpp"
+},
+{
+  "directory": "/home/hoquangnam/Documents/animal_chess/build",
+  "command": "/bin/x86_64-linux-gnu-g++-11 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -Ianimal_chess_autogen/include -I/home/hoquangnam/.conan/data/yaml-cpp/0.7.0/_/_/package/2a63f338fd63cfdf27f3f42261415c769e45e632/include -I/home/hoquangnam/.conan/data/magic_enum/0.7.3/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include -I../src/libs -I../src -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtWidgets -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtCore -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/mkspecs/linux-g++ -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtGui -g  -Wno-missing-declarations -fPIC -std=c++2a -o CMakeFiles/animal_chess.dir/src/libs/chessElement/ChessPosition/chessPosition.cpp.o -c /home/hoquangnam/Documents/animal_chess/src/libs/chessElement/ChessPosition/chessPosition.cpp",
+  "file": "/home/hoquangnam/Documents/animal_chess/src/libs/chessElement/ChessPosition/chessPosition.cpp"
+},
+{
+  "directory": "/home/hoquangnam/Documents/animal_chess/build",
+  "command": "/bin/x86_64-linux-gnu-g++-11 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -Ianimal_chess_autogen/include -I/home/hoquangnam/.conan/data/yaml-cpp/0.7.0/_/_/package/2a63f338fd63cfdf27f3f42261415c769e45e632/include -I/home/hoquangnam/.conan/data/magic_enum/0.7.3/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include -I../src/libs -I../src -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtWidgets -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtCore -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/mkspecs/linux-g++ -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtGui -g  -Wno-missing-declarations -fPIC -std=c++2a -o CMakeFiles/animal_chess.dir/src/libs/chessElement/chessBoard/chessBoard.cpp.o -c /home/hoquangnam/Documents/animal_chess/src/libs/chessElement/chessBoard/chessBoard.cpp",
+  "file": "/home/hoquangnam/Documents/animal_chess/src/libs/chessElement/chessBoard/chessBoard.cpp"
+},
+{
+  "directory": "/home/hoquangnam/Documents/animal_chess/build",
+  "command": "/bin/x86_64-linux-gnu-g++-11 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -Ianimal_chess_autogen/include -I/home/hoquangnam/.conan/data/yaml-cpp/0.7.0/_/_/package/2a63f338fd63cfdf27f3f42261415c769e45e632/include -I/home/hoquangnam/.conan/data/magic_enum/0.7.3/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include -I../src/libs -I../src -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtWidgets -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtCore -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/mkspecs/linux-g++ -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtGui -g  -Wno-missing-declarations -fPIC -std=c++2a -o CMakeFiles/animal_chess.dir/src/libs/chessElement/chessCell/chessCell.cpp.o -c /home/hoquangnam/Documents/animal_chess/src/libs/chessElement/chessCell/chessCell.cpp",
+  "file": "/home/hoquangnam/Documents/animal_chess/src/libs/chessElement/chessCell/chessCell.cpp"
+},
+{
+  "directory": "/home/hoquangnam/Documents/animal_chess/build",
+  "command": "/bin/x86_64-linux-gnu-g++-11 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -Ianimal_chess_autogen/include -I/home/hoquangnam/.conan/data/yaml-cpp/0.7.0/_/_/package/2a63f338fd63cfdf27f3f42261415c769e45e632/include -I/home/hoquangnam/.conan/data/magic_enum/0.7.3/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include -I../src/libs -I../src -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtWidgets -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtCore -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/mkspecs/linux-g++ -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtGui -g  -Wno-missing-declarations -fPIC -std=c++2a -o CMakeFiles/animal_chess.dir/src/libs/chessElement/chessPiece/chessPiece.cpp.o -c /home/hoquangnam/Documents/animal_chess/src/libs/chessElement/chessPiece/chessPiece.cpp",
+  "file": "/home/hoquangnam/Documents/animal_chess/src/libs/chessElement/chessPiece/chessPiece.cpp"
+},
+{
+  "directory": "/home/hoquangnam/Documents/animal_chess/build",
+  "command": "/bin/x86_64-linux-gnu-g++-11 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -Ianimal_chess_autogen/include -I/home/hoquangnam/.conan/data/yaml-cpp/0.7.0/_/_/package/2a63f338fd63cfdf27f3f42261415c769e45e632/include -I/home/hoquangnam/.conan/data/magic_enum/0.7.3/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include -I../src/libs -I../src -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtWidgets -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtCore -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/mkspecs/linux-g++ -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtGui -g  -Wno-missing-declarations -fPIC -std=c++2a -o CMakeFiles/animal_chess.dir/src/libs/layout/chessBoardLayout.cpp.o -c /home/hoquangnam/Documents/animal_chess/src/libs/layout/chessBoardLayout.cpp",
+  "file": "/home/hoquangnam/Documents/animal_chess/src/libs/layout/chessBoardLayout.cpp"
+},
+{
+  "directory": "/home/hoquangnam/Documents/animal_chess/build",
+  "command": "/bin/x86_64-linux-gnu-g++-11 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -Ianimal_chess_autogen/include -I/home/hoquangnam/.conan/data/yaml-cpp/0.7.0/_/_/package/2a63f338fd63cfdf27f3f42261415c769e45e632/include -I/home/hoquangnam/.conan/data/magic_enum/0.7.3/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include -I../src/libs -I../src -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtWidgets -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtCore -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/mkspecs/linux-g++ -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtGui -g  -Wno-missing-declarations -fPIC -std=c++2a -o CMakeFiles/animal_chess.dir/src/libs/ultilities/configurationParser/configurationParser.cpp.o -c /home/hoquangnam/Documents/animal_chess/src/libs/ultilities/configurationParser/configurationParser.cpp",
+  "file": "/home/hoquangnam/Documents/animal_chess/src/libs/ultilities/configurationParser/configurationParser.cpp"
+},
+{
+  "directory": "/home/hoquangnam/Documents/animal_chess/build",
+  "command": "/bin/x86_64-linux-gnu-g++-11 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -Ianimal_chess_autogen/include -I/home/hoquangnam/.conan/data/yaml-cpp/0.7.0/_/_/package/2a63f338fd63cfdf27f3f42261415c769e45e632/include -I/home/hoquangnam/.conan/data/magic_enum/0.7.3/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include -I../src/libs -I../src -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtWidgets -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtCore -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/mkspecs/linux-g++ -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtGui -g  -Wno-missing-declarations -fPIC -std=c++2a -o CMakeFiles/animal_chess.dir/src/libs/ultilities/function/helper.cpp.o -c /home/hoquangnam/Documents/animal_chess/src/libs/ultilities/function/helper.cpp",
+  "file": "/home/hoquangnam/Documents/animal_chess/src/libs/ultilities/function/helper.cpp"
+},
+{
+  "directory": "/home/hoquangnam/Documents/animal_chess/build",
+  "command": "/bin/x86_64-linux-gnu-g++-11 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -Ianimal_chess_autogen/include -I/home/hoquangnam/.conan/data/yaml-cpp/0.7.0/_/_/package/2a63f338fd63cfdf27f3f42261415c769e45e632/include -I/home/hoquangnam/.conan/data/magic_enum/0.7.3/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include -I../src/libs -I../src -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtWidgets -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtCore -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/mkspecs/linux-g++ -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtGui -g  -Wno-missing-declarations -fPIC -std=c++2a -o CMakeFiles/animal_chess.dir/src/libs/widgets/selectableWidget/selectableWidget.cpp.o -c /home/hoquangnam/Documents/animal_chess/src/libs/widgets/selectableWidget/selectableWidget.cpp",
+  "file": "/home/hoquangnam/Documents/animal_chess/src/libs/widgets/selectableWidget/selectableWidget.cpp"
+},
+{
+  "directory": "/home/hoquangnam/Documents/animal_chess/build",
+  "command": "/bin/x86_64-linux-gnu-g++-11 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -Ianimal_chess_autogen/include -I/home/hoquangnam/.conan/data/yaml-cpp/0.7.0/_/_/package/2a63f338fd63cfdf27f3f42261415c769e45e632/include -I/home/hoquangnam/.conan/data/magic_enum/0.7.3/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include -I../src/libs -I../src -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtWidgets -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtCore -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/mkspecs/linux-g++ -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtGui -g  -Wno-missing-declarations -fPIC -std=c++2a -o CMakeFiles/animal_chess.dir/src/libs/widgets/widgetChessBoard/widgetChessBoard.cpp.o -c /home/hoquangnam/Documents/animal_chess/src/libs/widgets/widgetChessBoard/widgetChessBoard.cpp",
+  "file": "/home/hoquangnam/Documents/animal_chess/src/libs/widgets/widgetChessBoard/widgetChessBoard.cpp"
+},
+{
+  "directory": "/home/hoquangnam/Documents/animal_chess/build",
+  "command": "/bin/x86_64-linux-gnu-g++-11 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -Ianimal_chess_autogen/include -I/home/hoquangnam/.conan/data/yaml-cpp/0.7.0/_/_/package/2a63f338fd63cfdf27f3f42261415c769e45e632/include -I/home/hoquangnam/.conan/data/magic_enum/0.7.3/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include -I../src/libs -I../src -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtWidgets -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtCore -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/mkspecs/linux-g++ -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtGui -g  -Wno-missing-declarations -fPIC -std=c++2a -o CMakeFiles/animal_chess.dir/src/libs/widgets/widgetChessCell/widgetChessCell.cpp.o -c /home/hoquangnam/Documents/animal_chess/src/libs/widgets/widgetChessCell/widgetChessCell.cpp",
+  "file": "/home/hoquangnam/Documents/animal_chess/src/libs/widgets/widgetChessCell/widgetChessCell.cpp"
+},
+{
+  "directory": "/home/hoquangnam/Documents/animal_chess/build",
+  "command": "/bin/x86_64-linux-gnu-g++-11 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -Ianimal_chess_autogen/include -I/home/hoquangnam/.conan/data/yaml-cpp/0.7.0/_/_/package/2a63f338fd63cfdf27f3f42261415c769e45e632/include -I/home/hoquangnam/.conan/data/magic_enum/0.7.3/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include -I../src/libs -I../src -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtWidgets -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtCore -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/mkspecs/linux-g++ -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtGui -g  -Wno-missing-declarations -fPIC -std=c++2a -o CMakeFiles/animal_chess.dir/src/libs/widgets/widgetChessPiece/widgetChessPiece.cpp.o -c /home/hoquangnam/Documents/animal_chess/src/libs/widgets/widgetChessPiece/widgetChessPiece.cpp",
+  "file": "/home/hoquangnam/Documents/animal_chess/src/libs/widgets/widgetChessPiece/widgetChessPiece.cpp"
+},
+{
+  "directory": "/home/hoquangnam/Documents/animal_chess/build",
+  "command": "/bin/x86_64-linux-gnu-g++-11 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -Ianimal_chess_autogen/include -I/home/hoquangnam/.conan/data/yaml-cpp/0.7.0/_/_/package/2a63f338fd63cfdf27f3f42261415c769e45e632/include -I/home/hoquangnam/.conan/data/magic_enum/0.7.3/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include -I../src/libs -I../src -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtWidgets -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtCore -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/mkspecs/linux-g++ -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtGui -g  -Wno-missing-declarations -fPIC -std=c++2a -o CMakeFiles/animal_chess.dir/src/libs/widgets/widgetElapsedClock/widgetElapsedClock.cpp.o -c /home/hoquangnam/Documents/animal_chess/src/libs/widgets/widgetElapsedClock/widgetElapsedClock.cpp",
+  "file": "/home/hoquangnam/Documents/animal_chess/src/libs/widgets/widgetElapsedClock/widgetElapsedClock.cpp"
+},
+{
+  "directory": "/home/hoquangnam/Documents/animal_chess/build",
+  "command": "/bin/x86_64-linux-gnu-g++-11 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -Ianimal_chess_autogen/include -I/home/hoquangnam/.conan/data/yaml-cpp/0.7.0/_/_/package/2a63f338fd63cfdf27f3f42261415c769e45e632/include -I/home/hoquangnam/.conan/data/magic_enum/0.7.3/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include -I../src/libs -I../src -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtWidgets -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtCore -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/mkspecs/linux-g++ -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtGui -g  -Wno-missing-declarations -fPIC -std=c++2a -o CMakeFiles/animal_chess.dir/src/main.cpp.o -c /home/hoquangnam/Documents/animal_chess/src/main.cpp",
+  "file": "/home/hoquangnam/Documents/animal_chess/src/main.cpp"
+},
+{
+  "directory": "/home/hoquangnam/Documents/animal_chess/build",
+  "command": "/bin/x86_64-linux-gnu-g++-11 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -Ianimal_chess_autogen/include -I/home/hoquangnam/.conan/data/yaml-cpp/0.7.0/_/_/package/2a63f338fd63cfdf27f3f42261415c769e45e632/include -I/home/hoquangnam/.conan/data/magic_enum/0.7.3/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include -I../src/libs -I../src -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtWidgets -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtCore -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/mkspecs/linux-g++ -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtGui -g  -Wno-missing-declarations -fPIC -std=c++2a -o CMakeFiles/animal_chess.dir/src/mainwindow.cpp.o -c /home/hoquangnam/Documents/animal_chess/src/mainwindow.cpp",
+  "file": "/home/hoquangnam/Documents/animal_chess/src/mainwindow.cpp"
+},
+{
+  "directory": "/home/hoquangnam/Documents/animal_chess/build",
+  "command": "/bin/x86_64-linux-gnu-g++-11 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -Ianimal_chess_autogen/include -I/home/hoquangnam/.conan/data/yaml-cpp/0.7.0/_/_/package/2a63f338fd63cfdf27f3f42261415c769e45e632/include -I/home/hoquangnam/.conan/data/magic_enum/0.7.3/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include -I../src/libs -I../src -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtWidgets -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtCore -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/mkspecs/linux-g++ -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtGui -g  -Wno-missing-declarations -fPIC -std=c++2a -o CMakeFiles/animal_chess.dir/src/mainwindowUI.cpp.o -c /home/hoquangnam/Documents/animal_chess/src/mainwindowUI.cpp",
+  "file": "/home/hoquangnam/Documents/animal_chess/src/mainwindowUI.cpp"
+},
+{
+  "directory": "/home/hoquangnam/Documents/animal_chess/build",
+  "command": "/bin/x86_64-linux-gnu-g++-11 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -Ianimal_chess_autogen/include -I/home/hoquangnam/.conan/data/yaml-cpp/0.7.0/_/_/package/2a63f338fd63cfdf27f3f42261415c769e45e632/include -I/home/hoquangnam/.conan/data/magic_enum/0.7.3/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include -I../src/libs -I../src -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtWidgets -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtCore -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/mkspecs/linux-g++ -isystem /home/hoquangnam/Qt/6.2.1/gcc_64/include/QtGui -g  -Wno-missing-declarations -fPIC -std=c++2a -o CMakeFiles/animal_chess.dir/animal_chess_autogen/3YJK5W5UP7/qrc_resourceMap.cpp.o -c /home/hoquangnam/Documents/animal_chess/build/animal_chess_autogen/3YJK5W5UP7/qrc_resourceMap.cpp",
+  "file": "/home/hoquangnam/Documents/animal_chess/build/animal_chess_autogen/3YJK5W5UP7/qrc_resourceMap.cpp"
+}
+]
